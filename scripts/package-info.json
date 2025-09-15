@@ -1,0 +1,24 @@
+{
+  "name": "ShadowsAI",
+  "version": "1.0.0",
+  "description": "IA auto-apprenante avec interface moderne",
+  "build": {
+    "requirements": {
+      "node": ">=18.0.0",
+      "npm": ">=8.0.0",
+      "os": "macOS 10.15+"
+    },
+    "steps": [
+      "Installer les prérequis",
+      "Cloner le projet",
+      "Installer les dépendances",
+      "Exécuter le build",
+      "Tester l'application"
+    ],
+    "outputs": {
+      "dmg": "Installateur macOS",
+      "zip": "Archive portable",
+      "app": "Application native"
+    }
+  }
+}
