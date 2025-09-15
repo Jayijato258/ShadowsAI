@@ -1,25 +1,16 @@
 import { openai } from "@ai-sdk/openai"
-import { convertToModelMessages, streamText, type UIMessage } from "ai"
+import { convertToCoreMessages, streamText } from "ai"
 
 export const maxDuration = 30
 
 export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json()
-
-  const prompt = convertToModelMessages(messages)
+  const { messages } = await req.json()
 
   const result = streamText({
-    model: openai.responses("gpt-4o-mini"),
-    prompt,
-    abortSignal: req.signal,
-    system: `You are an AI learning assistant that helps explain concepts and provides insights about machine learning, artificial intelligence, and self-improving systems. You are knowledgeable, helpful, and can adapt your explanations to different levels of understanding.`,
+    model: openai("gpt-4o-mini"),
+    messages: convertToCoreMessages(messages),
+    system: `You are ShadowsAI, an advanced self-learning AI assistant. You help users understand machine learning, artificial intelligence, and self-improving systems. You are knowledgeable, helpful, and can adapt your explanations to different levels of understanding. You respond in French when the user speaks French.`,
   })
 
-  return result.toUIMessageStreamResponse({
-    onFinish: async ({ isAborted }) => {
-      if (isAborted) {
-        console.log("Aborted")
-      }
-    },
-  })
+  return result.toDataStreamResponse()
 }
