@@ -5,12 +5,10 @@
   "keywords": [
     "ai",
     "machine-learning",
-    "electron",
     "nextjs",
     "french",
-    "macos"
+    "web-app"
   ],
-  "homepage": "./",
   "bugs": {
     "url": "https://github.com/shadowsai/shadowsai/issues"
   },
@@ -20,18 +18,10 @@
   },
   "license": "MIT",
   "author": "ShadowsAI Team",
-  "main": "electron/main.js",
   "scripts": {
     "build": "next build",
-    "build-electron": "npm run build && npm run electron",
-    "build-mac-auto": "node scripts/build-mac.js",
     "dev": "next dev",
-    "dist": "npm run build && electron-builder --mac --publish=never",
-    "electron": "electron .",
-    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
-    "postinstall": "electron-builder install-app-deps",
     "lint": "next lint",
-    "pack-mac": "npm run build && electron-builder --mac --publish=never",
     "start": "next start"
   },
   "dependencies": {
@@ -98,65 +88,8 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "concurrently": "^8.2.2",
-    "electron-builder": "^24.13.3",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
-    "tw-animate-css": "1.3.3",
-    "typescript": "^5",
-    "wait-on": "^7.2.0"
-  },
-  "build": {
-    "appId": "com.shadowsai.app",
-    "productName": "ShadowsAI",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "out/**/*",
-      "electron/**/*",
-      "node_modules/**/*"
-    ],
-    "mac": {
-      "category": "public.app-category.productivity",
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        },
-        {
-          "target": "zip",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
-      ],
-      "icon": "assets/icon.jpg"
-    },
-    "dmg": {
-      "title": "ShadowsAI Installer",
-      "background": "assets/dmg-background.jpg",
-      "window": {
-        "width": 540,
-        "height": 380
-      },
-      "contents": [
-        {
-          "x": 140,
-          "y": 200,
-          "type": "file"
-        },
-        {
-          "x": 400,
-          "y": 200,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    }
+    "typescript": "^5"
   }
 }
