@@ -3,7 +3,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useState, useEffect } from "react"
-import { Brain, Network, Lightbulb, Database } from "lucide-react"
 
 interface KnowledgeNode {
   id: string
@@ -44,13 +43,13 @@ export function KnowledgeGraph() {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case "Core":
-        return <Brain className="h-4 w-4" />
+        return "🧠"
       case "Applied":
-        return <Database className="h-4 w-4" />
+        return "💾"
       case "Advanced":
-        return <Lightbulb className="h-4 w-4" />
+        return "💡"
       default:
-        return <Network className="h-4 w-4" />
+        return "🌐"
     }
   }
 
@@ -72,10 +71,7 @@ export function KnowledgeGraph() {
       <div className="lg:col-span-2">
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Network className="h-5 w-5" />
-              Knowledge Network
-            </CardTitle>
+            <CardTitle className="flex items-center gap-2">🌐 Knowledge Network</CardTitle>
             <CardDescription>Interactive visualization of AI knowledge connections</CardDescription>
           </CardHeader>
           <CardContent>
@@ -90,7 +86,7 @@ export function KnowledgeGraph() {
                 >
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      {getCategoryIcon(node.category)}
+                      <span className="text-lg">{getCategoryIcon(node.category)}</span>
                       <Badge variant="outline" className={getCategoryColor(node.category)}>
                         {node.category}
                       </Badge>
@@ -166,7 +162,7 @@ export function KnowledgeGraph() {
               </div>
             ) : (
               <div className="text-center text-muted-foreground py-8">
-                <Network className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <div className="text-4xl mb-4">🌐</div>
                 <p>Click on a knowledge node to explore its connections and details.</p>
               </div>
             )}

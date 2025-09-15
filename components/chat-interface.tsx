@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Send, Bot, User, Loader2 } from "lucide-react"
 
 interface Message {
   id: string
@@ -83,9 +82,7 @@ export function ChatInterface({ expanded = false }: ChatInterfaceProps) {
               className={`flex items-start gap-3 ${message.sender === "user" ? "flex-row-reverse" : ""}`}
             >
               <Avatar className="h-8 w-8">
-                <AvatarFallback>
-                  {message.sender === "user" ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
-                </AvatarFallback>
+                <AvatarFallback>{message.sender === "user" ? "👤" : "🤖"}</AvatarFallback>
               </Avatar>
               <div
                 className={`rounded-lg p-3 max-w-[80%] ${
@@ -100,13 +97,11 @@ export function ChatInterface({ expanded = false }: ChatInterfaceProps) {
           {isLoading && (
             <div className="flex items-start gap-3">
               <Avatar className="h-8 w-8">
-                <AvatarFallback>
-                  <Bot className="h-4 w-4" />
-                </AvatarFallback>
+                <AvatarFallback>🤖</AvatarFallback>
               </Avatar>
               <div className="bg-muted rounded-lg p-3">
                 <div className="flex items-center gap-2">
-                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
                   <span className="text-sm">L'IA réfléchit...</span>
                 </div>
               </div>
@@ -125,7 +120,7 @@ export function ChatInterface({ expanded = false }: ChatInterfaceProps) {
             disabled={isLoading}
           />
           <Button onClick={handleSendMessage} disabled={isLoading || !inputValue.trim()} size="icon">
-            <Send className="h-4 w-4" />
+            ➤
           </Button>
         </div>
       </div>

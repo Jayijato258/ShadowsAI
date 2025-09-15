@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Brain, TrendingUp, Zap, Target, BookOpen, Activity, Server, MessageCircle, Mic, Network } from "lucide-react"
 import { LearningChart } from "@/components/learning-chart"
 import { KnowledgeGraph } from "@/components/knowledge-graph"
 import { TrainingModule } from "@/components/training-module"
@@ -77,7 +76,7 @@ export default function SelfLearningAI() {
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-3">
-            <Brain className="h-12 w-12 text-primary" />
+            <span className="text-6xl">🧠</span>
             <h1 className="text-4xl font-bold text-balance">Système IA Auto-Apprenant</h1>
           </div>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
@@ -89,10 +88,7 @@ export default function SelfLearningAI() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MessageCircle className="h-5 w-5" />
-                Chat avec l'IA
-              </CardTitle>
+              <CardTitle className="flex items-center gap-2">💬 Chat avec l'IA</CardTitle>
               <CardDescription>Interaction textuelle en temps réel</CardDescription>
             </CardHeader>
             <CardContent>
@@ -102,10 +98,7 @@ export default function SelfLearningAI() {
 
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Mic className="h-5 w-5" />
-                Interface Vocale
-              </CardTitle>
+              <CardTitle className="flex items-center gap-2">🎤 Interface Vocale</CardTitle>
               <CardDescription>Parlez directement avec l'IA</CardDescription>
             </CardHeader>
             <CardContent>
@@ -115,10 +108,7 @@ export default function SelfLearningAI() {
 
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Network className="h-5 w-5" />
-                Réseau Local
-              </CardTitle>
+              <CardTitle className="flex items-center gap-2">🌐 Réseau Local</CardTitle>
               <CardDescription>Découverte et interaction réseau</CardDescription>
             </CardHeader>
             <CardContent>
@@ -129,10 +119,7 @@ export default function SelfLearningAI() {
 
         <Card className="border-2">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Server className="h-5 w-5" />
-              Statut du Serveur Synology
-            </CardTitle>
+            <CardTitle className="flex items-center gap-2">🖥️ Statut du Serveur Synology</CardTitle>
             <CardDescription>Configuration et état de la connexion au stockage principal</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -159,10 +146,7 @@ export default function SelfLearningAI() {
 
         <Card className="border-2">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Activity className="h-5 w-5" />
-              Centre de Contrôle d'Apprentissage
-            </CardTitle>
+            <CardTitle className="flex items-center gap-2">📊 Centre de Contrôle d'Apprentissage</CardTitle>
             <CardDescription>Surveillez et contrôlez le processus d'apprentissage de l'IA</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -180,17 +164,7 @@ export default function SelfLearningAI() {
                 className="min-w-32"
                 disabled={!synologyConnected && !isLearning}
               >
-                {isLearning ? (
-                  <>
-                    <Zap className="h-4 w-4 mr-2 animate-pulse" />
-                    Arrêter l'Apprentissage
-                  </>
-                ) : (
-                  <>
-                    <Brain className="h-4 w-4 mr-2" />
-                    Commencer l'Apprentissage
-                  </>
-                )}
+                {isLearning ? <>⚡ Arrêter l'Apprentissage</> : <>🧠 Commencer l'Apprentissage</>}
               </Button>
             </div>
             {!synologyConnected && !isLearning && (
@@ -216,7 +190,7 @@ export default function SelfLearningAI() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Précision</CardTitle>
-              <Target className="h-4 w-4 text-muted-foreground" />
+              <span>🎯</span>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{metrics.accuracy.toFixed(1)}%</div>
@@ -228,7 +202,7 @@ export default function SelfLearningAI() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Base de Connaissances</CardTitle>
-              <BookOpen className="h-4 w-4 text-muted-foreground" />
+              <span>📚</span>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{metrics.knowledgeBase.toLocaleString()}</div>
@@ -242,7 +216,7 @@ export default function SelfLearningAI() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Taux d'Apprentissage</CardTitle>
-              <TrendingUp className="h-4 w-4 text-muted-foreground" />
+              <span>📈</span>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{metrics.learningRate.toFixed(1)}%</div>
@@ -254,7 +228,7 @@ export default function SelfLearningAI() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Confiance</CardTitle>
-              <Zap className="h-4 w-4 text-muted-foreground" />
+              <span>⚡</span>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{metrics.confidence.toFixed(1)}%</div>

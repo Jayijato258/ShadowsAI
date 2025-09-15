@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mic, MicOff, Volume2, VolumeX, Play, Square } from "lucide-react"
 
 interface VoiceInterfaceProps {
   expanded?: boolean
@@ -100,7 +99,7 @@ export function VoiceInterface({ expanded = false }: VoiceInterfaceProps) {
           size="lg"
           className="h-16 w-16 rounded-full"
         >
-          {isListening ? <MicOff className="h-6 w-6" /> : <Mic className="h-6 w-6" />}
+          {isListening ? "🔇" : "🎤"}
         </Button>
 
         <div className="flex flex-col items-center gap-2">
@@ -117,14 +116,13 @@ export function VoiceInterface({ expanded = false }: VoiceInterfaceProps) {
 
       <div className="flex items-center justify-center gap-2">
         <Button onClick={toggleVoice} variant={voiceEnabled ? "default" : "outline"} size="sm">
-          {voiceEnabled ? <Volume2 className="h-4 w-4 mr-2" /> : <VolumeX className="h-4 w-4 mr-2" />}
-          {voiceEnabled ? "Audio Activé" : "Audio Désactivé"}
+          {voiceEnabled ? "🔊" : "🔇"}
+          <span className="ml-2">{voiceEnabled ? "Audio Activé" : "Audio Désactivé"}</span>
         </Button>
 
         {isSpeaking && (
           <Button onClick={stopSpeaking} variant="outline" size="sm">
-            <Square className="h-4 w-4 mr-2" />
-            Arrêter
+            ⏹️ <span className="ml-2">Arrêter</span>
           </Button>
         )}
       </div>
@@ -151,8 +149,7 @@ export function VoiceInterface({ expanded = false }: VoiceInterfaceProps) {
                 className="mt-2"
                 disabled={isSpeaking}
               >
-                <Play className="h-4 w-4 mr-2" />
-                Répéter
+                ▶️ <span className="ml-2">Répéter</span>
               </Button>
             )}
           </CardContent>

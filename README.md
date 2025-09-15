@@ -1,58 +1,96 @@
-# IA Auto-Apprenante pour macOS
+# ShadowsAI
 
-Un système d'intelligence artificielle auto-apprenant avec interface utilisateur moderne, entièrement en français et compilé pour macOS.
+**Intelligence Artificielle Auto-Apprenante pour macOS**
 
-## Fonctionnalités
+ShadowsAI est un système d'intelligence artificielle révolutionnaire qui apprend de manière autonome avec une interface utilisateur moderne, entièrement en français et optimisé pour macOS.
 
-- **Apprentissage en temps réel** : L'IA s'améliore continuellement
-- **Interface française** : Entièrement localisée en français
-- **Métriques avancées** : Suivi de la précision, base de connaissances, taux d'apprentissage
-- **Graphe de connaissances** : Visualisation des connexions d'apprentissage
-- **Module d'entraînement** : Interface pour alimenter l'IA avec de nouvelles données
-- **Application macOS native** : Compilée avec Electron pour macOS
+## 🚀 Fonctionnalités
 
-## Installation et Compilation
+- **🧠 Apprentissage Autonome** : L'IA évolue et s'améliore continuellement
+- **💬 Interface Conversationnelle** : Chat textuel et vocal intuitif
+- **🌐 Connectivité Réseau** : Scanner et interaction avec le réseau local
+- **☁️ Stockage Synology** : Intégration avec serveurs Synology pour stockage de données
+- **📊 Métriques Avancées** : Suivi en temps réel des performances et de l'apprentissage
+- **🔗 Graphe de Connaissances** : Visualisation des connexions d'apprentissage
+- **🎯 Module d'Entraînement** : Interface pour alimenter l'IA avec de nouvelles données
+- **🍎 Application macOS Native** : Compilée avec Electron pour une expérience native
 
-### Prérequis
-- Node.js 18+
-- npm ou yarn
-- macOS (pour la compilation)
+## 📋 Prérequis
+
+- macOS 10.14 ou plus récent
+- Node.js 18+ (pour le développement)
+- npm ou yarn (pour le développement)
+
+## 🛠 Installation pour Développeurs
 
 ### Développement
 \`\`\`bash
+# Cloner le projet
+git clone https://github.com/votre-repo/shadowsai.git
+cd shadowsai
+
+# Installer les dépendances
 npm install
+
+# Lancer en mode développement
 npm run dev
 \`\`\`
 
-### Compilation pour macOS
+### Développement Electron
 \`\`\`bash
-# Construire l'application Electron
+# Lancer l'application Electron en développement
+npm run electron-dev
+\`\`\`
+
+## 📦 Compilation pour macOS
+
+### Créer l'exécutable
+\`\`\`bash
+# Construire et empaqueter pour macOS
 npm run pack-mac
 
-# Créer un installateur DMG
+# Créer un installateur DMG complet
 npm run dist
 \`\`\`
 
-### Scripts disponibles
+Les fichiers de distribution seront créés dans le dossier `dist/` :
+- `ShadowsAI-1.0.0.dmg` : Installateur DMG
+- `ShadowsAI-1.0.0-mac.zip` : Archive ZIP de l'application
+
+## 🎮 Utilisation
+
+1. **Lancement** : Double-cliquez sur ShadowsAI.app
+2. **Chat** : Interagissez par texte ou voix avec l'IA
+3. **Réseau** : Explorez et connectez-vous aux appareils locaux
+4. **Synology** : Configurez votre serveur pour le stockage
+5. **Apprentissage** : Observez l'évolution en temps réel
+6. **Entraînement** : Alimentez l'IA avec vos propres données
+
+## 🏗 Architecture Technique
+
+- **Frontend** : Next.js 14 + React 18
+- **UI** : Tailwind CSS + Radix UI
+- **Desktop** : Electron pour macOS
+- **IA** : AI SDK + OpenAI
+- **Graphiques** : Recharts
+- **Stockage** : Synology NAS + Local
+
+## 📱 Scripts Disponibles
+
 - `npm run dev` : Développement Next.js
 - `npm run build` : Construction de production
 - `npm run electron-dev` : Développement Electron
-- `npm run pack-mac` : Compilation macOS (ZIP + DMG)
-- `npm run dist` : Distribution complète
+- `npm run pack-mac` : Compilation macOS
+- `npm run dist` : Distribution complète avec installateur
 
-## Architecture
+## 🔧 Configuration
 
-L'application utilise :
-- **Next.js 14** : Framework React moderne
-- **Electron** : Empaquetage pour macOS
-- **Tailwind CSS** : Styles modernes
-- **Recharts** : Graphiques et visualisations
-- **AI SDK** : Intégration d'intelligence artificielle
+L'application se configure automatiquement au premier lancement. Vous pouvez :
+- Configurer votre serveur Synology
+- Ajuster les paramètres d'apprentissage
+- Personnaliser l'interface utilisateur
+- Gérer les connexions réseau
 
-## Utilisation
+---
 
-1. Lancez l'application
-2. Cliquez sur "Commencer l'Apprentissage"
-3. Observez les métriques en temps réel
-4. Utilisez les onglets pour explorer les différentes fonctionnalités
-5. Entraînez l'IA avec de nouvelles données dans l'onglet "Entraînement"
+**ShadowsAI** - L'avenir de l'intelligence artificielle personnelle sur macOS.
