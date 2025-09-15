@@ -6,11 +6,15 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Brain, TrendingUp, Zap, Target, BookOpen, Activity } from "lucide-react"
+import { Brain, TrendingUp, Zap, Target, BookOpen, Activity, Server, MessageCircle, Mic, Network } from "lucide-react"
 import { LearningChart } from "@/components/learning-chart"
 import { KnowledgeGraph } from "@/components/knowledge-graph"
 import { TrainingModule } from "@/components/training-module"
 import { RealtimeFeedback } from "@/components/realtime-feedback"
+import { SynologyConfig } from "@/components/synology-config"
+import { ChatInterface } from "@/components/chat-interface"
+import { VoiceInterface } from "@/components/voice-interface"
+import { NetworkScanner } from "@/components/network-scanner"
 
 interface LearningMetrics {
   accuracy: number
@@ -33,8 +37,9 @@ export default function SelfLearningAI() {
 
   const [isLearning, setIsLearning] = useState(false)
   const [currentTask, setCurrentTask] = useState("Analyse des modèles dans les données...")
+  const [synologyConnected, setSynologyConnected] = useState(false)
+  const [synologyStatus, setSynologyStatus] = useState("Déconnecté")
 
-  // Simulate real-time learning updates
   useEffect(() => {
     const interval = setInterval(() => {
       if (isLearning) {
@@ -52,6 +57,9 @@ export default function SelfLearningAI() {
           "Optimisation des arbres de décision...",
           "Analyse des modèles de rétroaction...",
           "Renforcement des connexions de connaissances...",
+          "Synchronisation avec le serveur Synology...",
+          "Sauvegarde des données d'apprentissage...",
+          "Récupération des modèles depuis Synology...",
         ]
         setCurrentTask(tasks[Math.floor(Math.random() * tasks.length)])
       }
@@ -73,10 +81,81 @@ export default function SelfLearningAI() {
             <h1 className="text-4xl font-bold text-balance">Système IA Auto-Apprenant</h1>
           </div>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Observez notre IA apprendre continuellement, s'adapter et améliorer sa compréhension grâce aux retours en
-            temps réel et à l'auto-optimisation.
+            Interagissez avec notre IA par texte ou voix, explorez votre réseau local et observez l'apprentissage
+            continu avec stockage Synology.
           </p>
         </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <Card className="border-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5" />
+                Chat avec l'IA
+              </CardTitle>
+              <CardDescription>Interaction textuelle en temps réel</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ChatInterface />
+            </CardContent>
+          </Card>
+
+          <Card className="border-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Mic className="h-5 w-5" />
+                Interface Vocale
+              </CardTitle>
+              <CardDescription>Parlez directement avec l'IA</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <VoiceInterface />
+            </CardContent>
+          </Card>
+
+          <Card className="border-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Network className="h-5 w-5" />
+                Réseau Local
+              </CardTitle>
+              <CardDescription>Découverte et interaction réseau</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <NetworkScanner />
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card className="border-2">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Server className="h-5 w-5" />
+              Statut du Serveur Synology
+            </CardTitle>
+            <CardDescription>Configuration et état de la connexion au stockage principal</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="space-y-1">
+                <p className="font-medium">État de Connexion</p>
+                <p className="text-sm text-muted-foreground">{synologyStatus}</p>
+              </div>
+              <Badge variant={synologyConnected ? "default" : "secondary"}>
+                {synologyConnected ? "Connecté" : "Déconnecté"}
+              </Badge>
+            </div>
+            {synologyConnected && (
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span>Espace de Stockage Utilisé</span>
+                  <span>2.4 GB / 500 GB</span>
+                </div>
+                <Progress value={0.48} className="h-2" />
+              </div>
+            )}
+          </CardContent>
+        </Card>
 
         <Card className="border-2">
           <CardHeader>
@@ -99,6 +178,7 @@ export default function SelfLearningAI() {
                 variant={isLearning ? "destructive" : "default"}
                 size="lg"
                 className="min-w-32"
+                disabled={!synologyConnected && !isLearning}
               >
                 {isLearning ? (
                   <>
@@ -113,6 +193,13 @@ export default function SelfLearningAI() {
                 )}
               </Button>
             </div>
+            {!synologyConnected && !isLearning && (
+              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-md">
+                <p className="text-sm text-yellow-800">
+                  Connectez-vous à votre serveur Synology pour commencer l'apprentissage avec stockage persistant.
+                </p>
+              </div>
+            )}
             {isLearning && (
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
@@ -177,13 +264,40 @@ export default function SelfLearningAI() {
           </Card>
         </div>
 
-        <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+        <Tabs defaultValue="interaction" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-7">
+            <TabsTrigger value="interaction">Interaction</TabsTrigger>
             <TabsTrigger value="overview">Vue d'Ensemble</TabsTrigger>
-            <TabsTrigger value="knowledge">Graphe de Connaissances</TabsTrigger>
+            <TabsTrigger value="knowledge">Connaissances</TabsTrigger>
             <TabsTrigger value="training">Entraînement</TabsTrigger>
-            <TabsTrigger value="feedback">Retour Temps Réel</TabsTrigger>
+            <TabsTrigger value="feedback">Retour</TabsTrigger>
+            <TabsTrigger value="network">Réseau</TabsTrigger>
+            <TabsTrigger value="synology">Synology</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="interaction" className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Interface de Chat Avancée</CardTitle>
+                  <CardDescription>Conversation complète avec l'IA</CardDescription>
+                </CardHeader>
+                <CardContent className="h-96">
+                  <ChatInterface expanded={true} />
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Contrôle Vocal Complet</CardTitle>
+                  <CardDescription>Commandes vocales et synthèse</CardDescription>
+                </CardHeader>
+                <CardContent className="h-96">
+                  <VoiceInterface expanded={true} />
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
 
           <TabsContent value="overview" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -233,6 +347,19 @@ export default function SelfLearningAI() {
 
           <TabsContent value="feedback">
             <RealtimeFeedback metrics={metrics} isLearning={isLearning} />
+          </TabsContent>
+
+          <TabsContent value="network">
+            <NetworkScanner expanded={true} />
+          </TabsContent>
+
+          <TabsContent value="synology">
+            <SynologyConfig
+              onConnectionChange={(connected, status) => {
+                setSynologyConnected(connected)
+                setSynologyStatus(status)
+              }}
+            />
           </TabsContent>
         </Tabs>
       </div>
