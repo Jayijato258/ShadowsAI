@@ -1,9 +1,25 @@
 {
   "name": "shadowsai",
   "version": "1.0.0",
-  "private": true,
   "description": "ShadowsAI - Intelligence Artificielle Auto-Apprenante",
+  "keywords": [
+    "ai",
+    "machine-learning",
+    "electron",
+    "nextjs",
+    "french",
+    "macos"
+  ],
   "homepage": "./",
+  "bugs": {
+    "url": "https://github.com/shadowsai/shadowsai/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadowsai/shadowsai.git"
+  },
+  "license": "MIT",
+  "author": "ShadowsAI Team",
   "main": "electron/main.js",
   "scripts": {
     "build": "next build",
