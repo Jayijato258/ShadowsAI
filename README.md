@@ -1,6 +1,18 @@
-# ShadowsAI
+<div align="center">
+  <img src="assets/shadowsai-logo.jpg" alt="ShadowsAI Logo" width="300"/>
+  
+  # ShadowsAI
+  
+  **Intelligence Artificielle Auto-Apprenante pour macOS**
+  
+  [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Jayijato258/ShadowsAI)
+  [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+  [![macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
+  [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+  
+</div>
 
-**Intelligence Artificielle Auto-Apprenante pour macOS**
+---
 
 ShadowsAI est un système d'intelligence artificielle révolutionnaire qui apprend de manière autonome avec une interface utilisateur moderne, entièrement en français et optimisé pour macOS.
 

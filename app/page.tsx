@@ -14,6 +14,7 @@ import { SynologyConfig } from "@/components/synology-config"
 import { ChatInterface } from "@/components/chat-interface"
 import { VoiceInterface } from "@/components/voice-interface"
 import { NetworkScanner } from "@/components/network-scanner"
+import { ShadowsAILogo } from "@/components/shadows-ai-logo"
 
 interface LearningMetrics {
   accuracy: number
@@ -75,9 +76,8 @@ export default function SelfLearningAI() {
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="text-center space-y-4">
-          <div className="flex items-center justify-center gap-3">
-            <span className="text-6xl">🧠</span>
-            <h1 className="text-4xl font-bold text-balance">Système IA Auto-Apprenant</h1>
+          <div className="flex items-center justify-center">
+            <ShadowsAILogo size="xl" />
           </div>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
             Interagissez avec notre IA par texte ou voix, explorez votre réseau local et observez l'apprentissage
