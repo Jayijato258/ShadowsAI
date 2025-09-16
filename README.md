@@ -252,33 +252,3 @@ SYNOLOGY_PROTOCOL=https
 Distribué sous licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
 
 Cette licence permet l'utilisation, la modification et la distribution libre du code source.
-
-## 🔗 Ressources & Support
-
-### Liens Utiles
-- **📱 Téléchargements** : [GitHub Releases](https://github.com/Jayijato258/ShadowsAI/releases)
-- **📖 Documentation** : [Wiki du projet](https://github.com/Jayijato258/ShadowsAI/wiki)
-- **🐛 Signaler un Bug** : [Issues GitHub](https://github.com/Jayijato258/ShadowsAI/issues)
-- **💬 Discussions** : [GitHub Discussions](https://github.com/Jayijato258/ShadowsAI/discussions)
-- **🎮 Templates Minecraft** : [Mod Templates Repository](https://github.com/Jayijato258/ShadowsAI-Minecraft-Templates)
-
-### Support Technique
-- **FAQ** : Questions fréquemment posées dans le Wiki
-- **Tutoriels** : Guides vidéo et documentation détaillée
-- **Community** : Discord et forums de discussion
-- **Email** : support@shadowsai.dev pour les questions urgentes
-
----
-
-<div align="center">
-  
-**ShadowsAI** - L'avenir de l'intelligence artificielle native sur macOS
-
-*Développé avec ❤️ en France pour la communauté macOS*
-
-**[⬇️ Télécharger pour macOS](https://github.com/Jayijato258/ShadowsAI/releases/latest)**
-
-</div>
-\`\`\`
-
-```js file="" isHidden
