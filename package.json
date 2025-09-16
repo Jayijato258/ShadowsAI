@@ -1,14 +1,16 @@
 {
   "name": "shadowsai",
   "version": "1.0.0",
-  "description": "ShadowsAI - Intelligence Artificielle Auto-Apprenante",
+  "description": "ShadowsAI - Intelligence Artificielle Auto-Apprenante pour macOS",
   "keywords": [
     "ai",
     "machine-learning",
-    "nextjs",
-    "french",
-    "web-app"
+    "electron",
+    "macos",
+    "desktop-app",
+    "minecraft-mods"
   ],
+  "homepage": "./",
   "bugs": {
     "url": "https://github.com/shadowsai/shadowsai/issues"
   },
@@ -18,11 +20,19 @@
   },
   "license": "MIT",
   "author": "ShadowsAI Team",
+  "main": "electron/main.js",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
+    "build": "next build && npm run build:electron",
+    "build:electron": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:mac-arm64": "electron-builder --mac --arm64",
+    "build:mac-x64": "electron-builder --mac --x64",
+    "dev": "concurrently \"npm run dev:next\" \"wait-on http://localhost:3000 && npm run dev:electron\"",
+    "dev:electron": "electron .",
+    "dev:next": "next dev",
+    "dist": "npm run build && electron-builder --publish=never",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir"
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
@@ -54,7 +64,6 @@
     "@radix-ui/react-toggle": "1.1.1",
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
-    "@vercel/analytics": "1.3.1",
     "ai": "latest",
     "autoprefixer": "^10.4.20",
     "child_process": "latest",
@@ -63,6 +72,7 @@
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
     "electron": "latest",
+    "electron-store": "^10.0.0",
     "embla-carousel-react": "8.5.1",
     "fs": "latest",
     "geist": "^1.3.1",
@@ -88,8 +98,65 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
+    "electron-builder": "^25.0.5",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.shadowsai.app",
+    "productName": "ShadowsAI",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "electron/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "assets/entitlements.mac.plist",
+      "entitlementsInherit": "assets/entitlements.mac.plist"
+    },
+    "dmg": {
+      "title": "ShadowsAI ${version}",
+      "icon": "assets/icon.icns",
+      "background": "assets/dmg-background.png",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
   }
 }

@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   trailingSlash: true,
+  assetPrefix: './',
   images: {
     unoptimized: true
   },
@@ -10,6 +12,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    esmExternals: false
+  }
 }
 
 export default nextConfig
