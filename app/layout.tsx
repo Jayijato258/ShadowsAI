@@ -1,14 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Suspense } from "react"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "IA Auto-Apprenante - ShadowsAI",
-  description: "Intelligence Artificielle qui apprend par elle-même avec stockage Synology",
+  title: "ShadowsAI - Intelligence Artificielle Auto-Apprenante",
+  description: "Application native macOS d'intelligence artificielle qui apprend de manière autonome",
   generator: "v0.app",
 }
 
@@ -19,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.className} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-      </body>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>{children}</body>
     </html>
   )
 }

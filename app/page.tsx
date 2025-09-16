@@ -81,8 +81,8 @@ export default function SelfLearningAI() {
             <ShadowsAILogo size="xl" />
           </div>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Interagissez avec notre IA par texte ou voix, explorez votre réseau local et observez l'apprentissage
-            continu avec stockage Synology.
+            Application native macOS d'intelligence artificielle auto-apprenante avec intégration Minecraft et stockage
+            Synology.
           </p>
         </div>
 
@@ -240,13 +240,12 @@ export default function SelfLearningAI() {
         </div>
 
         <Tabs defaultValue="interaction" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-8">
+          <TabsList className="grid w-full grid-cols-7">
             <TabsTrigger value="interaction">Interaction</TabsTrigger>
             <TabsTrigger value="overview">Vue d'Ensemble</TabsTrigger>
             <TabsTrigger value="knowledge">Connaissances</TabsTrigger>
             <TabsTrigger value="training">Entraînement</TabsTrigger>
             <TabsTrigger value="feedback">Retour</TabsTrigger>
-            <TabsTrigger value="network">Réseau</TabsTrigger>
             <TabsTrigger value="synology">Synology</TabsTrigger>
             <TabsTrigger value="minecraft">Minecraft</TabsTrigger>
           </TabsList>
@@ -323,10 +322,6 @@ export default function SelfLearningAI() {
 
           <TabsContent value="feedback">
             <RealtimeFeedback metrics={metrics} isLearning={isLearning} />
-          </TabsContent>
-
-          <TabsContent value="network">
-            <NetworkScanner expanded={true} />
           </TabsContent>
 
           <TabsContent value="synology">

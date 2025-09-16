@@ -3,53 +3,55 @@
   
   # ShadowsAI
   
-  **Intelligence Artificielle Auto-Apprenante Multiplateforme**
+  **Intelligence Artificielle Auto-Apprenante pour macOS**
   
   [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Jayijato258/ShadowsAI)
   [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-  [![Platform](https://img.shields.io/badge/platform-Web%20%7C%20macOS-lightgrey.svg)](https://shadowsai.vercel.app)
-  [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+  [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://github.com/Jayijato258/ShadowsAI)
+  [![Electron](https://img.shields.io/badge/Electron-32-47848f.svg)](https://electronjs.org/)
   [![Minecraft](https://img.shields.io/badge/Minecraft-Mod%20Support-green.svg)](https://minecraft.net/)
   
 </div>
 
 ---
 
-ShadowsAI est un système d'intelligence artificielle révolutionnaire qui apprend de manière autonome avec une interface utilisateur moderne, entièrement en français et disponible sur web et macOS.
+ShadowsAI est une application native macOS d'intelligence artificielle révolutionnaire qui apprend de manière autonome. Avec une interface utilisateur moderne entièrement en français, elle offre des fonctionnalités avancées d'apprentissage automatique et d'intégration Minecraft.
 
 ## 🚀 Fonctionnalités Principales
 
-### 🧠 Intelligence Artificielle
+### 🧠 Intelligence Artificielle Native
 - **Apprentissage Autonome** : L'IA évolue et s'améliore continuellement
 - **Chat Conversationnel** : Interface textuelle et vocale intuitive
 - **Analyse Comportementale** : Compréhension des patterns d'utilisation
 - **Métriques Avancées** : Suivi en temps réel des performances
+- **Stockage Local** : Données d'apprentissage stockées localement sur votre Mac
 
-### 🎮 Intégration Minecraft
-- **🔧 Générateur de Mods** : Création automatique de mods Minecraft
-- **📊 Collecte de Données** : Analyse du comportement de jeu
+### 🎮 Générateur de Mods Minecraft
+- **🔧 Création Automatique** : Génération de mods Minecraft personnalisés
+- **📊 Collecte de Données** : Analyse du comportement de jeu en temps réel
 - **🎯 Apprentissage Adaptatif** : L'IA apprend de vos habitudes de jeu
-- **⚙️ Support Multi-Versions** : Compatible avec les versions récentes de Minecraft
+- **⚙️ Support Multi-Versions** : Compatible Minecraft 1.20+ (Forge/Fabric)
 - **🤖 Assistant IA In-Game** : Aide contextuelle pendant le jeu
 
-### 🌐 Connectivité & Stockage
-- **Scanner Réseau** : Détection et interaction avec appareils locaux
-- **Synology Integration** : Stockage sur serveurs NAS
-- **Cloud Sync** : Synchronisation des données d'apprentissage
+### 🌐 Connectivité Avancée
+- **Scanner Réseau Local** : Détection automatique des appareils
+- **Intégration Synology** : Stockage sur serveurs NAS
+- **Synchronisation Cloud** : Sauvegarde des données d'apprentissage
+- **APIs Natives** : Accès aux fonctionnalités système macOS
 
 ### 📊 Visualisation & Analytics
-- **Graphe de Connaissances** : Visualisation des connexions d'apprentissage
+- **Graphe de Connaissances** : Visualisation interactive des connexions
 - **Dashboard Temps Réel** : Métriques de performance instantanées
-- **Historique d'Apprentissage** : Suivi de l'évolution de l'IA
+- **Historique d'Apprentissage** : Suivi complet de l'évolution de l'IA
+- **Rapports Détaillés** : Analyses approfondies des performances
 
-## 🎮 Fonctionnalités Minecraft
+## 🎮 Templates de Mods Minecraft
 
-### Générateur de Mods Intelligent
-- **Templates Prédéfinis** :
-  - 🎯 **Behavior Tracker** : Analyse des actions du joueur
-  - 🌍 **World Analyzer** : Étude des constructions et explorations
-  - 🤖 **AI Assistant** : Aide contextuelle in-game
-  - ⚡ **Smart Automation** : Automatisation intelligente des tâches
+### Générateur Intelligent
+- **🎯 Behavior Tracker** : Analyse complète des actions du joueur
+- **🌍 World Analyzer** : Étude des constructions et explorations
+- **🤖 AI Assistant** : Aide contextuelle et suggestions intelligentes
+- **⚡ Smart Automation** : Automatisation avancée des tâches répétitives
 
 ### Apprentissage du Gameplay
 - **Pattern Recognition** : Détection des habitudes de construction
@@ -57,162 +59,226 @@ ShadowsAI est un système d'intelligence artificielle révolutionnaire qui appre
 - **Combat Analysis** : Amélioration des stratégies de combat
 - **Exploration Mapping** : Cartographie intelligente des mondes
 
-## 📋 Prérequis
+## 📋 Prérequis Système
 
-### Application Web
-- Navigateur moderne (Chrome, Firefox, Safari, Edge)
-- Connexion Internet pour les fonctionnalités IA
+### Configuration Minimale
+- **macOS** : 10.15 (Catalina) ou plus récent
+- **RAM** : 4 GB minimum, 8 GB recommandé
+- **Stockage** : 500 MB d'espace libre
+- **Processeur** : Intel x64 ou Apple Silicon (M1/M2/M3)
 
-### Application macOS
-- macOS 10.14 ou plus récent
-- 4 GB RAM minimum, 8 GB recommandé
-
-### Développement
-- Node.js 18+ 
-- npm ou pnpm
-- Git
+### Configuration Recommandée
+- **macOS** : 12.0 (Monterey) ou plus récent
+- **RAM** : 16 GB pour les performances optimales
+- **Stockage** : 2 GB pour les données d'apprentissage
+- **Connexion** : Internet pour les fonctionnalités IA
 
 ## 🛠 Installation
 
-### 🌐 Version Web (Recommandée)
-Accédez directement à [shadowsai.vercel.app](https://shadowsai.vercel.app) - aucune installation requise !
+### 📦 Installation Rapide
+1. Téléchargez le fichier `ShadowsAI-1.0.0.dmg` depuis les [Releases](https://github.com/Jayijato258/ShadowsAI/releases)
+2. Montez le fichier DMG en double-cliquant
+3. Glissez `ShadowsAI.app` vers le dossier `Applications`
+4. Lancez l'application depuis le Launchpad ou Applications
 
-### 💻 Version macOS
-1. Téléchargez le fichier `.dmg` depuis les [Releases](https://github.com/Jayijato258/ShadowsAI/releases)
-2. Montez le fichier DMG
-3. Glissez ShadowsAI.app vers Applications
-4. Lancez l'application
+### 🔒 Première Utilisation
+1. **Autorisation de Sécurité** : Autorisez l'application dans Préférences Système > Sécurité
+2. **Configuration IA** : Configurez votre clé API OpenAI (optionnel)
+3. **Permissions** : Accordez les permissions réseau et fichiers si demandées
+4. **Calibration** : Laissez l'IA se calibrer lors du premier lancement
 
-### 🎮 Mods Minecraft
-1. Utilisez l'interface web pour générer votre mod
-2. Téléchargez le fichier `.jar` généré
-3. Placez-le dans votre dossier `mods/` de Minecraft
-4. Lancez Minecraft avec Forge/Fabric
+## 🚀 Développement & Compilation
 
-## 🚀 Développement
-
-### Installation
+### Installation des Dépendances
 \`\`\`bash
 # Cloner le projet
 git clone https://github.com/Jayijato258/ShadowsAI.git
 cd ShadowsAI
 
 # Installer les dépendances
-pnpm install
+npm install
 
 # Lancer en mode développement
-pnpm dev
+npm run dev
 \`\`\`
 
-### Scripts Disponibles
+### Scripts de Build
 \`\`\`bash
-# Développement web
-pnpm dev              # Serveur de développement
-pnpm build            # Build de production
-pnpm start            # Serveur de production
+# Développement
+npm run dev              # Mode développement avec hot-reload
+npm run dev:electron     # Lancement Electron en développement
 
-# Compilation macOS (branche séparée)
-pnpm electron-dev     # Développement Electron
-pnpm pack-mac         # Compilation macOS
-pnpm dist             # Distribution avec installateur
+# Production
+npm run build            # Build de l'interface Next.js
+npm run build:electron   # Compilation Electron complète
+npm run build:mac        # Build spécifique macOS (Universal)
+npm run build:mac-arm64  # Build pour Apple Silicon
+npm run build:mac-x64    # Build pour Intel
 
-# Utilitaires
-pnpm lint             # Vérification du code
-pnpm type-check       # Vérification TypeScript
+# Distribution
+npm run dist             # Création des installateurs
+npm run pack             # Empaquetage sans installateur
+\`\`\`
+
+### Structure du Projet
+\`\`\`
+ShadowsAI/
+├── app/                 # Interface utilisateur Next.js
+├── components/          # Composants React réutilisables
+├── electron/           # Code Electron (main, preload)
+├── assets/             # Icônes et ressources macOS
+├── scripts/            # Scripts de build et utilitaires
+└── dist/               # Fichiers de distribution générés
 \`\`\`
 
 ## 🎯 Utilisation
 
-### Interface Web
-1. **Chat IA** : Conversez avec l'intelligence artificielle
-2. **Générateur Minecraft** : Créez des mods personnalisés
-3. **Analytics** : Visualisez les données d'apprentissage
-4. **Configuration** : Personnalisez les paramètres
+### Interface Principale
+1. **Dashboard IA** : Vue d'ensemble des métriques d'apprentissage
+2. **Chat Intelligent** : Conversation avec l'IA auto-apprenante
+3. **Interface Vocale** : Reconnaissance et synthèse vocale
+4. **Générateur Minecraft** : Création de mods personnalisés
+5. **Scanner Réseau** : Découverte d'appareils locaux
+6. **Configuration Synology** : Stockage sur serveur NAS
 
-### Mods Minecraft
-1. **Génération** : Sélectionnez un template et configurez
-2. **Installation** : Téléchargez et installez le mod
-3. **Jeu** : L'IA collecte et analyse vos données
-4. **Évolution** : L'assistant s'améliore avec votre style de jeu
+### Génération de Mods Minecraft
+1. **Sélection Template** : Choisissez parmi les templates prédéfinis
+2. **Configuration** : Personnalisez les paramètres du mod
+3. **Génération** : L'IA crée le mod selon vos spécifications
+4. **Installation** : Téléchargez et installez automatiquement
+5. **Apprentissage** : Le mod collecte des données pour l'IA
 
 ## 🏗 Architecture Technique
 
-### Frontend
-- **Framework** : Next.js 14 + React 18
-- **Styling** : Tailwind CSS v4 + Radix UI
+### Frontend Native
+- **Framework** : Next.js 14 avec export statique
+- **UI Components** : Radix UI + Tailwind CSS v4
 - **Charts** : Recharts pour les visualisations
 - **Icons** : Lucide React
+- **Animations** : Framer Motion
 
-### Backend & IA
-- **AI SDK** : Vercel AI SDK + OpenAI
-- **API Routes** : Next.js API Routes
-- **Real-time** : WebSocket pour les mises à jour live
+### Backend Electron
+- **Runtime** : Electron 32 avec sécurité renforcée
+- **Process** : Main process + Renderer isolé
+- **Storage** : Electron Store pour la persistance
+- **APIs** : IPC sécurisé avec contextBridge
+- **Security** : Context isolation + Preload scripts
 
-### Minecraft Integration
-- **Mod Generation** : Templates Java/Kotlin
-- **Data Collection** : JSON API pour les métriques
+### Intelligence Artificielle
+- **AI SDK** : Vercel AI SDK + OpenAI GPT-4
+- **Learning** : Apprentissage local avec sauvegarde
+- **Models** : Stockage des modèles entraînés
+- **Analytics** : Métriques de performance en temps réel
+
+### Intégration Minecraft
+- **Mod Generation** : Templates Java/Kotlin dynamiques
+- **Data Collection** : APIs JSON pour les métriques
 - **Version Support** : Forge 1.20+ / Fabric 1.20+
+- **Auto-Install** : Installation automatique des mods
 
-### Déploiement
-- **Web** : Vercel (Production)
-- **Desktop** : Electron + GitHub Releases
-- **CI/CD** : GitHub Actions
-
-## 🔧 Configuration
+## 🔧 Configuration Avancée
 
 ### Variables d'Environnement
 \`\`\`env
-# IA Configuration
+# Configuration IA
 OPENAI_API_KEY=your_openai_key
-NEXT_PUBLIC_AI_MODEL=gpt-4
+AI_MODEL=gpt-4
+AI_LEARNING_RATE=0.01
 
 # Minecraft Integration
-NEXT_PUBLIC_MINECRAFT_API_URL=your_api_url
-MINECRAFT_MOD_TEMPLATES_PATH=./templates
+MINECRAFT_DIR=/Users/username/Library/Application Support/minecraft
+MOD_TEMPLATES_PATH=./templates/minecraft
 
-# Analytics
-NEXT_PUBLIC_ANALYTICS_ID=your_analytics_id
+# Synology NAS
+SYNOLOGY_HOST=your_nas_ip
+SYNOLOGY_PORT=5000
+SYNOLOGY_PROTOCOL=https
 \`\`\`
 
 ### Personnalisation
-- **Thèmes** : Mode sombre/clair automatique
+- **Thèmes** : Mode sombre/clair avec adaptation système
 - **Langue** : Interface entièrement en français
 - **IA** : Paramètres d'apprentissage ajustables
 - **Minecraft** : Templates de mods personnalisables
+- **Raccourcis** : Raccourcis clavier macOS natifs
 
-## 📊 Métriques & Analytics
+## 📊 Métriques & Performance
 
-- **Interactions IA** : Nombre et qualité des conversations
-- **Apprentissage** : Progression des modèles
-- **Minecraft** : Statistiques de gameplay collectées
-- **Performance** : Temps de réponse et utilisation ressources
+### Suivi d'Apprentissage
+- **Précision** : Taux de réussite des prédictions
+- **Base de Connaissances** : Nombre de concepts appris
+- **Vitesse d'Apprentissage** : Progression par session
+- **Confiance** : Niveau de certitude des réponses
+
+### Analytics Minecraft
+- **Temps de Jeu** : Durée et fréquence des sessions
+- **Patterns de Construction** : Styles et préférences
+- **Gestion des Ressources** : Efficacité et optimisation
+- **Exploration** : Zones visitées et découvertes
+
+## 🔒 Sécurité & Confidentialité
+
+### Protection des Données
+- **Stockage Local** : Toutes les données restent sur votre Mac
+- **Chiffrement** : Données sensibles chiffrées AES-256
+- **Permissions** : Accès minimal aux ressources système
+- **Sandbox** : Application sandboxée pour la sécurité
+
+### Conformité
+- **RGPD** : Respect des réglementations européennes
+- **Apple Guidelines** : Conformité aux standards macOS
+- **Open Source** : Code source disponible pour audit
+- **Transparence** : Aucune collecte de données personnelles
 
 ## 🤝 Contribution
 
-1. Fork le projet
-2. Créez une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
+### Comment Contribuer
+1. **Fork** le projet sur GitHub
+2. **Clone** votre fork localement
+3. **Créez** une branche feature (`git checkout -b feature/NouvelleFonctionnalite`)
+4. **Développez** votre fonctionnalité avec tests
+5. **Commit** vos changements (`git commit -m 'Ajout NouvelleFonctionnalite'`)
+6. **Push** vers votre branche (`git push origin feature/NouvelleFonctionnalite`)
+7. **Ouvrez** une Pull Request détaillée
+
+### Guidelines de Développement
+- **Code Style** : ESLint + Prettier configurés
+- **Tests** : Tests unitaires requis pour nouvelles fonctionnalités
+- **Documentation** : Commentaires et README à jour
+- **Performance** : Optimisation pour macOS native
 
 ## 📄 Licence
 
-Distribué sous licence MIT. Voir `LICENSE` pour plus d'informations.
+Distribué sous licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
 
-## 🔗 Liens Utiles
+Cette licence permet l'utilisation, la modification et la distribution libre du code source.
 
-- **🌐 Application Web** : [shadowsai.vercel.app](https://shadowsai.vercel.app)
+## 🔗 Ressources & Support
+
+### Liens Utiles
 - **📱 Téléchargements** : [GitHub Releases](https://github.com/Jayijato258/ShadowsAI/releases)
 - **📖 Documentation** : [Wiki du projet](https://github.com/Jayijato258/ShadowsAI/wiki)
 - **🐛 Signaler un Bug** : [Issues GitHub](https://github.com/Jayijato258/ShadowsAI/issues)
 - **💬 Discussions** : [GitHub Discussions](https://github.com/Jayijato258/ShadowsAI/discussions)
+- **🎮 Templates Minecraft** : [Mod Templates Repository](https://github.com/Jayijato258/ShadowsAI-Minecraft-Templates)
+
+### Support Technique
+- **FAQ** : Questions fréquemment posées dans le Wiki
+- **Tutoriels** : Guides vidéo et documentation détaillée
+- **Community** : Discord et forums de discussion
+- **Email** : support@shadowsai.dev pour les questions urgentes
 
 ---
 
 <div align="center">
   
-**ShadowsAI** - L'avenir de l'intelligence artificielle personnelle et gaming
-  
-*Développé avec ❤️ en France*
+**ShadowsAI** - L'avenir de l'intelligence artificielle native sur macOS
+
+*Développé avec ❤️ en France pour la communauté macOS*
+
+**[⬇️ Télécharger pour macOS](https://github.com/Jayijato258/ShadowsAI/releases/latest)**
 
 </div>
+\`\`\`
+
+```js file="" isHidden

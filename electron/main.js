@@ -17,6 +17,7 @@ function createWindow() {
       contextIsolation: true,
       enableRemoteModule: false,
       webSecurity: true,
+      preload: path.join(__dirname, "preload.js"),
     },
     icon: path.join(__dirname, "../assets/icon.png"),
     show: false,
