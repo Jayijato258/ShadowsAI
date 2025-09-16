@@ -15,6 +15,7 @@ import { ChatInterface } from "@/components/chat-interface"
 import { VoiceInterface } from "@/components/voice-interface"
 import { NetworkScanner } from "@/components/network-scanner"
 import { ShadowsAILogo } from "@/components/shadows-ai-logo"
+import { MinecraftModManager } from "@/components/minecraft-mod-manager"
 
 interface LearningMetrics {
   accuracy: number
@@ -239,7 +240,7 @@ export default function SelfLearningAI() {
         </div>
 
         <Tabs defaultValue="interaction" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-7">
+          <TabsList className="grid w-full grid-cols-8">
             <TabsTrigger value="interaction">Interaction</TabsTrigger>
             <TabsTrigger value="overview">Vue d'Ensemble</TabsTrigger>
             <TabsTrigger value="knowledge">Connaissances</TabsTrigger>
@@ -247,6 +248,7 @@ export default function SelfLearningAI() {
             <TabsTrigger value="feedback">Retour</TabsTrigger>
             <TabsTrigger value="network">Réseau</TabsTrigger>
             <TabsTrigger value="synology">Synology</TabsTrigger>
+            <TabsTrigger value="minecraft">Minecraft</TabsTrigger>
           </TabsList>
 
           <TabsContent value="interaction" className="space-y-6">
@@ -334,6 +336,10 @@ export default function SelfLearningAI() {
                 setSynologyStatus(status)
               }}
             />
+          </TabsContent>
+
+          <TabsContent value="minecraft">
+            <MinecraftModManager />
           </TabsContent>
         </Tabs>
       </div>
